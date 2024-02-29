@@ -8,7 +8,6 @@ use App\Http\Resources\ProductListResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Api\Product;
 use Illuminate\Http\Request;
-use App\Models\Category;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
@@ -58,13 +57,10 @@ class ProductController extends Controller
             $data['image_size'] = $image->getSize();
         }
 
-
-        $category = Category::find($request->input('category_id'));
-        $product = $category->products()->create($data);
+        $product = Product::create($data);
 
         return new ProductResource($product);
     }
-
 
     /**
      * Display the specified resource.
@@ -104,15 +100,10 @@ class ProductController extends Controller
             }
         }
 
-
-        $category = Category::find($request->input('category_id'));
-        $product->category()->associate($category);
         $product->update($data);
 
         return new ProductResource($product);
     }
-
-
 
     /**
      * Remove the specified resource from storage.
