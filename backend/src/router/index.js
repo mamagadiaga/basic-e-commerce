@@ -16,24 +16,27 @@ import Report from "../views/Reports/Report.vue";
 import OrdersReport from "../views/Reports/OrdersReport.vue";
 import CustomersReport from "../views/Reports/CustomersReport.vue";
 
+
+
+
 const routes = [
   {
     path: '/',
-    redirect: '/app'
+    redirect: '/app/products'
   },
   {
     path: '/app',
     name: 'app',
-    redirect: '/app/products',
-    component: Products,
+    component: AppLayout,
     meta: {
       requiresAuth: true
     },
+
     children: [
       {
-        path: 'dashboard',
-        name: 'app.dashboard',
-        component: Products,
+        path: '',
+        name: 'app.products',
+        component: Products
       },
       {
         path: 'products',
@@ -125,13 +128,13 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.state.user.token) {
-    next({name: 'login'})
+    next({ name: 'login' });
   } else if (to.meta.requiresGuest && store.state.user.token) {
-    next({name: 'app.dashboard'})
+    next({ name: 'app.products' });
   } else {
     next();
   }
+});
 
-})
 
 export default router;

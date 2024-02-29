@@ -114,7 +114,7 @@ function login() {
   store.dispatch('login', user)
     .then(() => {
       loading.value = false;
-      router.push({name: 'app.dashboard'})
+      router.push({name: 'app.products'})
     })
     .catch(({response}) => {
       loading.value = false;
