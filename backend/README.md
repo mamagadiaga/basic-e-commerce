@@ -82,3 +82,9 @@ Avant de commencer, assurez-vous d'avoir correctement configuré votre environne
     ```
 
 N'oubliez pas de vous assurer que tous les prérequis sont installés et configurés correctement avant de commencer l'installation.
+
+
+
+## Licence
+
+Laravel est un framework open-source distribué sous la licence [MIT](https://opensource.org/licenses/MIT).

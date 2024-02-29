@@ -27,67 +27,62 @@ La documentation de Laravel est l'une des plus complètes et des plus détaillé
 
 Vous êtes encouragés à contribuer au développement continu de Laravel ! Consultez le [guide de contribution](https://laravel.com/docs/contributions) pour savoir comment participer.
 
-## Installation
 
-1. Clonez le dépôt :
+# Guide d'installation
 
-    ```
-    git clone https://github.com/mamagadiaga/laravel-api.git
-    ```
+Avant de commencer, assurez-vous d'avoir correctement configuré votre environnement. Vous aurez besoin de MySQL, PHP 8.1 et Composer.
 
-2. Installez Composer (si ce n'est pas déjà fait) en suivant les instructions sur [getcomposer.org](https://getcomposer.org/download/).
+## Installation du site web Laravel + API
 
-3. Mettez à jour/installer les dépendances avec Composer :
-
-    ```
-    composer update
-    ```
-
-    ou
-
-    ```
+1. Téléchargez le projet (ou clonez-le en utilisant GIT).
+2. Copiez le fichier `.env.example` et renommez-le en `.env`, puis configurez les identifiants de la base de données.
+3. Naviguez jusqu'au répertoire racine du projet à l'aide du terminal.
+4. Exécutez la commande suivante pour installer les dépendances PHP :
+    ```bash
     composer install
     ```
-
-4. Installez Node.js (si ce n'est pas déjà fait) en suivant les instructions sur [nodejs.org](https://nodejs.org/en/download/).
-
-5. Installez les dépendances Node.js :
-
+5. Générez une clé de chiffrement en exécutant la commande suivante :
+    ```bash
+    php artisan key:generate 
     ```
+6. Lancez les migrations avec la commande suivante pour créer les tables de la base de données :
+    ```bash
+    php artisan migrate --seed
+    ```
+7. Démarrez le serveur local en exécutant la commande suivante :
+    ```bash
+    php artisan serve
+    ```
+8. Ouvrez un nouveau terminal, naviguez jusqu'au répertoire racine du projet, puis exécutez la commande suivante pour installer les dépendances JavaScript :
+    ```bash
     npm install
     ```
-
-6. Lancez Vite :
-
-    ```
+9. Lancez le serveur Vite pour le frontend Laravel en exécutant la commande suivante :
+    ```bash
     npm run dev
     ```
 
-7. Allez dans le fichier `.env` et modifiez les informations de base de données et de messagerie électronique selon vos propres identifiants. Ensuite, configurez certaines configurations avec vos propres informations d'identification.
+## Installation du panneau d'administration Vue.js
 
-8. Exécutez la migration pour créer les tables de base de données :
+1. Naviguez vers le dossier `backend`.
+2. Exécutez la commande suivante pour installer les dépendances JavaScript :
+    ```bash
+    npm install
+    ```
+3. Copiez le fichier `.env.example` du dossier `backend` et renommez-le en `.env`.
+4. Assurez-vous que la clé `VITE_API_BASE_URL` dans le fichier `.env` du dossier `backend` est définie sur l'hôte de votre API Laravel (par défaut: http://localhost:8000).
+5. Exécutez la commande suivante pour démarrer le serveur de développement Vue.js :
+    ```bash
+    npm run dev
+    ```
+6. Ouvrez le panneau d'administration Vue.js dans votre navigateur et connectez-vous avec les identifiants suivants :
+    ```
+    Adresse e-mail : admin@example.com
+    Mot de passe : admin123
+    ```
 
-    ```
-    php artisan migrate
-    ```
+N'oubliez pas de vous assurer que tous les prérequis sont installés et configurés correctement avant de commencer l'installation.
 
-    ou si vous souhaitez également remplir la base de données avec des données de test :
-
-    ```
-    php artisan migrate --seed
-    ```
-
-9. Générez une nouvelle clé d'application Laravel :
-
-    ```
-    php artisan key:generate
-    ```
-
-10. Créez un lien symbolique pour le stockage :
-
-    ```
-    php artisan storage:link
-    ```
 
 ## Licence
 
