@@ -24,16 +24,16 @@ const routes = [
   {
     path: '/app',
     name: 'app',
-    redirect: '/app/dashboard',
+    redirect: '/app/products',
     component: AppLayout,
     meta: {
       requiresAuth: true
     },
     children: [
       {
-        path: 'dashboard',
-        name: 'app.dashboard',
-        component: Dashboard
+        path: 'products',
+        name: 'app.products',
+        component: Products
       },
       {
         path: 'products',
@@ -127,7 +127,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.state.user.token) {
     next({name: 'login'})
   } else if (to.meta.requiresGuest && store.state.user.token) {
-    next({name: 'app.dashboard'})
+    next({name: 'app.products'})
   } else {
     next();
   }

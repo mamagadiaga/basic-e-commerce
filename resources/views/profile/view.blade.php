@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
     <div x-data="{
             flashMessage: '{{\Illuminate\Support\Facades\Session::get('flash_message')}}',
             init() {
@@ -282,4 +282,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}

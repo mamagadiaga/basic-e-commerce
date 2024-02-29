@@ -1,4 +1,4 @@
-<?php
+{{-- <?php
 /** @var \Illuminate\Database\Eloquent\Collection $orders */
 ?>
 
@@ -74,4 +74,4 @@
             {{ $orders->links() }}
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}

@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
 
     <div class="container mx-auto lg:w-2/3 p-5">
         <h1 class="text-3xl font-bold mb-2">Order #{{$order->id}}</h1>
@@ -79,4 +79,4 @@
             @endif
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}

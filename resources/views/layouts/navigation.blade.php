@@ -1,4 +1,4 @@
-<header
+{{-- <header
     x-data="{
         mobileMenuOpen: false,
         cartItemsCount: {{ \App\Helpers\Cart::getCartItemsCount() }},
@@ -393,4 +393,4 @@
             />
         </svg>
     </button>
-</header>
+</header> --}}
